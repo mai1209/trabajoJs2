@@ -48,50 +48,56 @@ const pizzas = [
   },
 ];
 
+console.log("Las pizzas que tengan un id impar.");
+console.log("----------------------------------------");
 
-//  Las pizzas que tengan un id impar.
+const impar = pizzas.filter((pizza) => {
+  return pizza.id % 2 !== 0;
+});
+
+const nombre = impar.map((imp) => {
+  return imp.nombre;
+});
+
+console.log(`las pizzas que tienen un id impar son:${nombre} `);
+
+console.log("----------------------------------------");
+
+console.log("b) Responder: ¿Hay alguna pizza que valga menos de $600?");
+console.log("----------------------------------------");
+
+const pizzaMenos600 = pizzas.filter((pizza) => {
+  return pizza.precio < 600;
+});
+
+const menos = pizzaMenos600.map((men) => {
+  return men.nombre;
+});
+
+console.log(`la pizza con precio menos a $600 es: ${menos}`);
+
+console.log("----------------------------------------");
+console.log("c) El nombre de cada pizza con su respectivo precio.");
+console.log("----------------------------------------");
+
+const nombres = pizzas.map((names) => {
+  return `nombre: ${names.nombre} --- precio es: $${names.precio}`;
+});
+
+nombres.forEach((nombre) => {
+  console.log(nombre);
+});
+
+console.log("----------------------------------------");
+console.log("d) Todos los ingredientes de cada pizza ");
+console.log("----------------------------------------");
+
+const ingredientes = pizzas.map((pizza) => {
+  return `nombre: ${pizza.nombre} --- ingredientes: ${pizza.ingredientes}`;
+});
+
+ingredientes.forEach((ingrediente) => {
+  console.log(ingrediente);
+});
 
 
-
-const impar = pizzas.filter ((pizza) =>{
-  return pizza.id %2 !==0
-})
-
-
-
-const nombre =impar.map((imp) =>{
-  return imp.nombre  
-})
-
-//console.log(`las pizzas que tienen un id impar son:${nombre} `)
-
-//b) Responder: ¿Hay alguna pizza que valga menos de $600?
-
-const  pizzaMenos600 = pizzas.filter ((pizza) =>{
-  return pizza.precio < 600
-})
-
-const menos= pizzaMenos600.map((men) =>{
-  return men.nombre  
-})
-
-
-
-//console.log(`la pizza con precio menos a $600 es: ${menos}`)
-
-//c) El nombre de cada pizza con su respectivo precio.
-
-const nombres = pizzas.map((names) =>{
-  return (`nombre: ${names.nombre} --- precio es: $${names.precio}`)
-})
-
-//console.log(nombres)
-
-//d) Todos los ingredientes de cada pizza 
-
-const ingredientes = pizzas.map((pizza) =>{
-  return (`nombre: ${pizza.nombre} --- ingredientes: ${pizza.ingredientes}`)
-})
-
-
-//console.log(ingredientes)
